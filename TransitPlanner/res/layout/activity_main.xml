@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            class="com.google.android.gms.maps.MapFragment" />
+
+        <Button
+            android:id="@+id/search_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showSearchBack"
+            android:text="@string/str_search_back"
+            android:visibility="gone" />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+		<AutoCompleteTextView
+	        android:id="@+id/autoCompleteTextView1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:completionThreshold="1"
+	        android:ems="10"
+	        android:hint="@string/from" >
+	
+	        <requestFocus />
+	    </AutoCompleteTextView>
+	
+	    <AutoCompleteTextView
+	        android:id="@+id/autoCompleteTextView2"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:completionThreshold="1"
+	        android:ems="10"
+	        android:hint="@string/to" />
+	
+	    <ToggleButton
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:onClick="showMoreOptions"
+	        android:textOff="@string/button_more_options"
+	        android:textOn="@string/button_more_options" />
+
+	    <LinearLayout
+	        android:id="@+id/more_options"
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1"
+	        android:orientation="vertical"
+	        android:visibility="gone" >
+		
+	    <ScrollView
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	         >
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical">
+
+	            <LinearLayout
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content" >
+
+	                <RadioButton
+	                    android:id="@+id/radioButton1"
+	                    android:layout_width="0dp"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:text="@string/arrival_time" />
+
+	                <RadioButton
+	                    android:id="@+id/radioButton2"
+	                    android:layout_width="0dp"
+	                    android:layout_height="wrap_content"
+	                    android:layout_weight="1"
+	                    android:text="@string/reaching_time" />
+	            </LinearLayout>
+
+	            <TimePicker
+	                android:id="@+id/timePicker1"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content" />
+
+	            <EditText
+	                android:id="@+id/editText2"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:ems="10"
+	                android:hint="@string/transfers"
+	                android:inputType="number" />
+
+	            <EditText
+	                android:id="@+id/editText3"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:ems="10"
+	                android:hint="@string/walking_distance"
+	                android:inputType="number" />
+
+	            <DatePicker
+	                android:id="@+id/datePicker1"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content" />
+	        </LinearLayout>
+
+	    </ScrollView>
+
+	     
+
+	    </LinearLayout>
+		<Button
+	        android:id="@+id/button1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:onClick="getPlan"
+	        android:text="@string/button_get_plan" />
+    </LinearLayout>
+</LinearLayout>

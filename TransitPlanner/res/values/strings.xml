@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TransitPlanner</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_plan">PlanActivity</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="button_get_plan">Get Plan!</string>
+    <string name="button_more_options">Refine Search!</string>
+	<string name="arrival_time">Arrival Time</string>
+	<string name="reaching_time">Reaching Time</string>
+	<string name="transfers">Max. Transfers</string>
+	<string name="walking_distance">Max. Walking Distance</string>
+	<string name="transit_date">Transit Date</string>
+	<string name="str_search_back">Back</string>
+</resources>
