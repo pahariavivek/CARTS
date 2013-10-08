@@ -89,18 +89,25 @@ public class MainActivity extends Activity implements MoreOptionsDialogFragment.
     	map_container.setLayoutParams(new LinearLayout.LayoutParams(-1, 0, 5));
     	((Button) view).setVisibility(View.GONE);
     }
+ 
+    public String prepareQuery(View view){
+    	return "http://www.transittripplanner.co.in/TransitTripPlanner/controller_s?target=plan&srcStopNo=1121&destStopNo=22&hr=8&min=30&sec=0&ampm=am&height=4&stend=start&walk=500&mode=all&network=static&cache=0.3225696527604375";
+    }
+ 
     public void getPlan(View view){
     	LinearLayout map_container = (LinearLayout) findViewById(R.id.map_container);
     	map_container.setLayoutParams(new LinearLayout.LayoutParams(-1, -1, 0));
     	Button searchBack = (Button) findViewById(R.id.search_back);
     	searchBack.setVisibility(View.VISIBLE);
+       	String query = prepareQuery(view);
+    	new QueryServer().execute(query);
     	//Intent intent = new Intent(this, PlanActivity.class);
     	//startActivity(intent);
     }
+
     public void showMoreOptions(){
     	DialogFragment dialog = new MoreOptionsDialogFragment();
         dialog.show(getFragmentManager(), "MoreOptionsDialogFragment");
-
     }
     @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
