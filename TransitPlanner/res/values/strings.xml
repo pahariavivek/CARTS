@@ -15,4 +15,6 @@
 	<string name="walking_distance">Max. Walking Distance</string>
 	<string name="transit_date">Transit Date</string>
 	<string name="str_search_back">Back</string>
+	<string name="ok">OK</string>
+	<string name="cancel">Cancel</string>
 </resources>

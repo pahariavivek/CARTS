@@ -10,19 +10,23 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import android.os.Bundle;
 import android.os.Debug;
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ScrollView;
 import android.widget.TimePicker;
 import android.widget.LinearLayout;
 import android.widget.ToggleButton;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements MoreOptionsDialogFragment.MoreOptionsDialogListener {
 	private GoogleMap mMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +40,29 @@ public class MainActivity extends Activity {
         textView2.setAdapter(adapter);
         
         setUpMapIfNeeded();
-        Log.i("just","sdafasdfasdfas");
     }
-    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
     @Override
     protected void onResume() {
         super.onResume();
         setUpMapIfNeeded();
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.more_options:
+            	showMoreOptions();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
     private static final String[] BUSTOPS = new String[] {
         "Belgium", "basd", "badfg", "bdefg", "bdggg", "France", "Italy", "Germany", "Spain"
@@ -77,22 +97,19 @@ public class MainActivity extends Activity {
     	//Intent intent = new Intent(this, PlanActivity.class);
     	//startActivity(intent);
     }
-    public void showMoreOptions(View view){
-    	boolean on = ((ToggleButton) view).isChecked();
-    	LinearLayout moreOptions = (LinearLayout) findViewById(R.id.more_options);
-    	Log.i("height", Integer.toString(moreOptions.getMeasuredHeight()));
-        if (on) {
-        	moreOptions.setVisibility(android.view.View.VISIBLE);
-        } else {
-        	moreOptions.setVisibility(android.view.View.GONE);
-        }
+    public void showMoreOptions(){
+    	DialogFragment dialog = new MoreOptionsDialogFragment();
+        dialog.show(getFragmentManager(), "MoreOptionsDialogFragment");
+
     }
-    
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        
     }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+    }
+
     
 }

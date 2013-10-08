@@ -186,33 +186,31 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
-        public static final int action_settings=0x7f050012;
         public static final int autoCompleteTextView1=0x7f050008;
         public static final int autoCompleteTextView2=0x7f050009;
-        public static final int button1=0x7f050011;
-        public static final int datePicker1=0x7f050010;
-        public static final int editText2=0x7f05000e;
-        public static final int editText3=0x7f05000f;
+        public static final int button1=0x7f05000a;
+        public static final int editText2=0x7f05000f;
+        public static final int editText3=0x7f050010;
         public static final int hybrid=0x7f050004;
         public static final int map=0x7f050006;
         public static final int map_container=0x7f050005;
-        public static final int more_options=0x7f05000a;
+        public static final int more_options=0x7f050011;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
-        public static final int radioButton1=0x7f05000b;
-        public static final int radioButton2=0x7f05000c;
+        public static final int radio0=0x7f05000c;
+        public static final int radio1=0x7f05000d;
+        public static final int radioGroup1=0x7f05000b;
         public static final int satellite=0x7f050002;
         public static final int search_back=0x7f050007;
         public static final int terrain=0x7f050003;
-        public static final int timePicker1=0x7f05000d;
+        public static final int timePicker1=0x7f05000e;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int activity_plan=0x7f030001;
+        public static final int more_options=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f090000;
-        public static final int plan=0x7f090001;
     }
     public static final class string {
         public static final int action_settings=0x7f06001a;
@@ -243,6 +241,7 @@ containing a value of this type.
         public static final int auth_client_using_bad_version_title=0x7f060013;
         public static final int button_get_plan=0x7f06001f;
         public static final int button_more_options=0x7f060020;
+        public static final int cancel=0x7f060028;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -312,6 +311,7 @@ containing a value of this type.
         public static final int common_signin_button_text_long=0x7f060012;
         public static final int from=0x7f06001d;
         public static final int hello_world=0x7f06001b;
+        public static final int ok=0x7f060027;
         public static final int reaching_time=0x7f060022;
         public static final int str_search_back=0x7f060026;
         public static final int title_activity_plan=0x7f06001c;
@@ -334,7 +334,6 @@ containing a value of this type.
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
- API 11 theme customizations can go here. 
 
         Base application theme for API 14+. This theme completely replaces
         AppBaseTheme from BOTH res/values/styles.xml and
