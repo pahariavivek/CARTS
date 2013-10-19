@@ -3,7 +3,6 @@ package com.example.transitplanner;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -28,6 +27,12 @@ import android.widget.ToggleButton;
 
 public class MainActivity extends Activity implements MoreOptionsDialogFragment.MoreOptionsDialogListener {
 	private GoogleMap mMap;
+	private int src;
+	private int dest;
+	private int height;
+	private int stend;
+	private int walk;
+	private int transfers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +60,6 @@ public class MainActivity extends Activity implements MoreOptionsDialogFragment.
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.more_options:
             	showMoreOptions();
